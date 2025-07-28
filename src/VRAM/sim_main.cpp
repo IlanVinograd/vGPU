@@ -3,7 +3,6 @@
 #include <VRAM.h>
 #include <memory>
 #include <vector>
-#include <cassert>
 
 int main(int argc, char** argv) {
     Verilated::commandArgs(argc, argv);
