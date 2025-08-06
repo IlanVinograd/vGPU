@@ -31,8 +31,8 @@ int main(int argc, char** argv) {
     fifo->wrst_n = 1;
     fifo->rrst_n = 1;
 
-    const int wclk_period = 3;
-    const int rclk_period = 5;
+    const int wclk_period = 1;
+    const int rclk_period = 4;
     int wclk_cnt = 0, rclk_cnt = 0;
 
     int data_to_write = 0;
@@ -40,7 +40,7 @@ int main(int argc, char** argv) {
     bool prev_rclk = fifo->rclk;
     bool prev_wclk = fifo->wclk;
 
-    for (int cycle = 0; cycle < 200; ++cycle) {
+    for (int cycle = 0; cycle < 1000000; ++cycle) {
         if (wclk_cnt++ >= wclk_period / 2) {
             fifo->wclk = !fifo->wclk;
             wclk_cnt = 0;

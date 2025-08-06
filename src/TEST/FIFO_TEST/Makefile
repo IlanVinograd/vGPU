@@ -27,7 +27,8 @@ prof-build:
 		--Mdir $(OBJ_DIR) \
 		--exe sim_main.cpp \
 		--build \
-		--prof-cfuncs
+		--prof-cfuncs \
+		-CFLAGS "-pg" -LDFLAGS "-pg"
 
 prof: prof-build
 	@echo "[*] Running simulation with profiling..."
